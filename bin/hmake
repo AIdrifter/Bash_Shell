@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# color definitions
+C_ERROR=`echo -e '\033[37;41m'`
+C_WARNING=`echo -e '\033[37;44m'`
+C_RECOVER=`echo -e '\033[0m'`
+
+
+function _make {
+	make $@ 2>&1 | \
+	sed -E -e "s/^.*[ :][Ee]rror[ :]*.*$/$C_ERROR&$C_RECOVER/" \
+	-e "s/^.*[ :][Ww]arning[ :]*.*$/$C_WARNING&$C_RECOVER/" \
+	-e "s/^.*[ :]WARNING[ :]*.*$/$C_WARNING&$C_RECOVER/"
+
+	return ${PIPESTATUS[0]}
+}
+
+_make $@

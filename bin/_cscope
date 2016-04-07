@@ -1,0 +1,19 @@
+#!/bin/sh
+in=$1
+
+if [ $in == 'all' ];then
+    echo "start generate cscope and ctags"
+    find ./  -name "*.c" -o -name "*.h" -o -name "*.cpp" > cscope.files
+    cscope -bkq -i cscope.files
+    ctags -R --exclude=.svn
+    echo "finihs"
+fi
+
+if [ $in == 'clean' ];then
+    echo "remove cscope and ctags"
+    rm cs*
+    rm tags
+    echo "finihs"
+fi
+
+

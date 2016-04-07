@@ -1,0 +1,25 @@
+echo "selcet your path faster"
+echo "dtcp"
+echo "playready"
+echo "SN_dev"
+
+case $1 in
+dtcp)
+    cd ~/swork/PERFORCE/THEALE/Cecil/dtcpip_l3/trunk
+;;
+playready)
+    cd ~/swork/PERFORCE/THEALE/Cecil/playready/trunk
+;;
+SN_Dev)
+    cd ~/swork/PERFORCE/DAILEO/SN_Branch/SN_Dev/Supernova/projects
+;;
+
+11030)
+    cd ~/swork/PERFORCE/DAILEO/SN_Branch/SN__-04.11.030/Supernova/projects
+;;
+
+
+*)
+    echo "no path"
+;;
+esac
