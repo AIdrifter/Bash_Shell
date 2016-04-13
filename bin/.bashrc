@@ -5,16 +5,22 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 #sets up theprompt color (currently a green similar to linux terminal)
 
-GREEN="\[\033[01;32m\]"
+GREEN1="\[\033[01;32m\]"
 WHITE="\[\033[00m\]"
 GREEN2="\[\033[01;36m\]"
-YELLO="\[\033[0;33m\]"
+YELLOW="\[\033[0;33m\]"
+RED="\[\033[0;31m\]"
+RED_BOLD="\[$(tput bold)\]\[\033[38;5;196m\]"
+YELLOW="\[\033[0;33m\]"
+GREEN="\[\033[0;32m\]"
+BLOD_GREEN="\[$(tput bold)\]\[\033[38;5;10m\]"
+BLUE="\[\033[38;5;14m\]"
+BLOD_BLUE="\[$(tput bold)\]\[\033[38;5;14m\]"
+NO_COLOR="\[\033[0m\]"
+NEW_LINE="\n\[$(tput sgr0)\]"
 
-export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ \[\033[0;33m\]$(parse_git_branch)\[\033[00m\]'
-#S1="${BASH_NEWLINE}$(date +%H:%M:%S) \u at \h \w \$(parse_git_branch)${BASH_WHITE}$";
-#export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ \[\033[0;33m\]$(parse_git_branch)\[\033[00m\]'
-#export PS1="${BASH_NEWLINE}$(date +%H:%M:%S) \u at \h \w \$(parse_git_branch)${BASH_WHITE}$";
-#export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ \[\033[0;33m\]$(parse_git_branch)\[\033[00m\]'
+PS1="$NEW_LINE $BLOD_BLUE\w$YELLOW\$(parse_git_branch)$NEW_LINE$RED_BOLD\u@\h$NO_COLOR\$ "
+
 PATH=$PATH:/home/pin/Desktop/git-hub/Bash_Shell/bin
 
 alias ccat='pygmentize -O style=monokai -f console256 -g'
