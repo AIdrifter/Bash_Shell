@@ -12,7 +12,7 @@ if [ ! -z "$1" ] ;then
     # cat ~/notebook/$1
     # cat ~/notebook/$1 | less
     echo "notebook r mode"
-    /usr/share/vim/vim73/macros/less.sh $notebook/$1
+    cat $notebook/$1
     exit
 fi
 

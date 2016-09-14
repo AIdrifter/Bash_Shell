@@ -1,0 +1,2 @@
+# hexdump
+hexdump -C xxx.bin 

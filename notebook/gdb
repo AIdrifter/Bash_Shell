@@ -1,0 +1,152 @@
+# reomte gdb
+
+# board Server
+{MSystem::Run} /applications/bin/autorun --nowloadini<-----Supernova
+ps | grep lunch
+gdbserver :5566 --attach $(PID)
+
+
+
+
+# client
+# 1. your binary file
+.$(toolchain)-gdb ./symbols/applications/bin/binary
+
+# 2. we need non-striped symbol , find symbol here
+set solib-absolute-prefix ./symbols
+
+# 3.connect
+target remote xxx.xx.xx.xx:5566
+
+# info
+info $your_command
+info breakpoint '現在有幾個break point'
+
+
+info args
+info display
+info locals
+info shared libraries
+info signals
+info threads
+
+
+# dir dirname
+# add another soucre symbol
+
+show directories
+show listsize
+whatis variable_name
+
+# break pooint
+break IdleAppFrame::OnKey
+
+break $function_name
+brak file.cpp:100
+break *0x80408123
+
+break <where>
+    set a new breakpoint
+delete <breakpoint#>
+    Remove a breakpoint
+clear
+    Delete all breakpioints
+enable <breakpoint#>
+    Enable a disabled breakpoint
+disable <breakpoint#>
+    Disable a breakpoint
+
+# continue                                                                                      [38/852]
+continue
+
+# next (一行一行)
+n
+
+# printf variable
+# print/format <what>
+p variabble
+
+printf/x $pc 'print program counter'
+ex:pc is 0x7c3e20
+x/4xb 0x7c3e20
+
+
+# print memmory
+# /x/nfu
+    print memory
+    n:how many units to print(default 1)
+    f:Format character(like print"")
+    u:Unit
+
+
+    Unit is on of
+        b:byte
+        h:Word(foud bytes)
+        w:Word four bytes
+        g:Giant word(eight bytes)
+
+# Fotmat
+    a: pointrt
+    c:Read as Integer ,print as character
+    d:Integer,signed decimnal
+    f:floating potin number
+    o:inter,print as octal
+    s:Try to reeeat as C string
+    t:Integer,print as binary
+    u:unsigned decinal integer
+    x:hexadecimal integer
+
+# change variable value
+set xxxx=0
+    .....
+
+# setpting
+進去現在停住的function
+step
+    go to next instructionb (source file),diving into function
+next
+    Go to next instruction(source line) but don't dive into functions
+finish
+    continue until the current function returns
+contunue
+    continue normal execution
+
+# exit function
+finish
+
+# Conditons
+break/watch <where> if <condition>
+
+
+break file.cpp:100 if x >10
+break file.cpp
+
+# 如果想要更改條件 又不想要直接刪除中斷點
+condition <breakpoint#> x>=10
+
+# translate to assembly code
+disassemble $(start_addredss) $(end_address)
+
+# next assembly instruction
+nexti
+
+
+# Jump
+break xxxx.cpp:1344 if xxx==0
+jump 1014(line number)
+contniue
+end
+
+
+# Thread
+info thread '列出該preocess 所有thread id'
+threadno $(number)
+threadno args
+thread apply 5 by full
+
+
+break frik.c:13 thread 28 if bartab > lim
+<=> thread apply 28 break frik.c:13 bartab > lim
+
+
+

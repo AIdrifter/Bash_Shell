@@ -1,0 +1,5 @@
+# mount
+busybox mount -t nfs -o nolock 172.16.20.21:/xxx/aaaaa
+mount -t ext4 -o loop /dev/mmcblk11 /xxxx
+busybox mount -o remount,rw /system
+

@@ -1,0 +1,6 @@
+# ifconfig
+
+ifconfig eth0 down
+ifconfig eth1 up
+
+
