@@ -1,9 +1,0 @@
-swork=/users/pinkus.chang/swork/backup
-local=/users/pinkus.chang
-
-
-echo "backup notebook and ~/bin to swork/pinkus on 6404"
-cp -rf $local/bin $swork
-cp -rf $local/notebook $swork
-echo $(date) >> $swork/server_version
-
