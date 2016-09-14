@@ -1,0 +1,20 @@
+# backtrace
+notebook r mode
+
+# Android backtrace
+http://janbarry0914.blogspot.tw/2014/07/androiddump-call-stack.html
+
+#include <utils/CallStack.h>
+
+CallStack stack;
+stack.update();
+//stack.dump();
+stack.log("XXX");
+
+
+# Linux backtrace
+https://panthema.net/2008/0901-stacktrace-demangled/
+
+arm-none-linux-gnueabi-addr2line -e symbols/applications/bin/dvbt_FHD_board 0x41018b40
+arm-none-linux-gnueabi-addr2line -e symbols/applications/bin/tvos 0x69115c
+

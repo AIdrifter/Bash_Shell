@@ -1,0 +1,23 @@
+# gcc
+
+http://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html
+ 
+# telling GCC where to find the shared library
+gcc -L/home/username/foo -Wall -o test main.c -lfoo
+ 
+'Note that the -lfoo option is not looking for foo.o, but libfoo.so'
+ 
+# header
+gcc -I
+ 
+# warnning
+『foo' defined but not used [-Werror=unused-function]
+static __attribute__ ((unused)) void foo(){
+...
+}
+ 
+# gcc version
+gcc -v    
+
+# --unresolved-symbols=method 
+g++ mm.cpp -Wl,--unresolved-symbols=ignore-in-object-files 

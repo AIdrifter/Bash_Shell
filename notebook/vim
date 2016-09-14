@@ -1,0 +1,7 @@
+# vim
+export CSCOPE_DB=$PWD
+ 
+:1,$s/123/456/g
+ 
+# comupte vim spped and reomve slow plugin
+vim --startuptime timeCost.txt timeCost.txt   

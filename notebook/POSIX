@@ -1,0 +1,14 @@
+# POSIX
+The POSIX system calls open()
+, close()
+, read()
+, write(),
+poll()
+, ioctl()
+, mmap(),
+munmap()
+, msync()
+ & lseek()
+ 
+
+

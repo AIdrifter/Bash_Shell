@@ -1,0 +1,9 @@
+# setenv
+
+setenv serverip 172.16.44.125 ;
+setenv ethaddr 00:73:71:00:00:01;
+setenv macaddr 00:73:71:00:00:01;
+saveenv;
+estar;
+dhcp;
+

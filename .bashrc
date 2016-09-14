@@ -19,7 +19,7 @@ BLOD_BLUE="\[$(tput bold)\]\[\033[38;5;14m\]"
 NO_COLOR="\[\033[0m\]"
 NEW_LINE="\n\[$(tput sgr0)\]"
 
-PS1="$NEW_LINE $BLOD_BLUE\w$YELLOW\$(parse_git_branch)$NEW_LINE$RED_BOLD\u@\h$NO_COLOR\$ "
+PS1="$NEW_LINE $BLOD_BLUE\w$YELLOW\$(parse_git_branch)$NEW_LINE$BLOD_GREEN\u@\h$NO_COLOR\$ "
 
 PATH=$PATH:/home/pin/Desktop/git-hub/Bash_Shell/bin
 
@@ -42,8 +42,8 @@ alias vi='vim --noplugin'
 
 
 # my alias
-BINPATH=/home/pin/Desktop/git-hub/Bash_Shell/bin
-NOTEBOOK=/home/pin/Desktop/git-hub/Bash_Shell/notebook
+BINPATH=~/bin
+NOTEBOOK=~/notebook
 alias g='sh $BINPATH/_grep.sh'
 alias h='source $BINPATH/_history_special.sh'
 alias cl='ls -l $NOTEBOOK'

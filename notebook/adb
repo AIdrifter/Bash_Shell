@@ -1,0 +1,7 @@
+# adb
+
+adb disconnect
+adb connect 172.16.38.73:5555 (board ifconfig)
+adb devices (make sure the devices is connected)
+adb shell
+

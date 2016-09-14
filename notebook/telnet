@@ -1,0 +1,6 @@
+# telnet
+SN:
+ telnetd -l /bin/sh
+linux
+ telnet 172.16.38.73
+~
