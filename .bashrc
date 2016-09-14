@@ -34,8 +34,12 @@ alias grep='grep --color'
 alias grep1='grep --color -A 5 -B 5 -R -i -nH'
 alias grep2='grep1 --exclude='*tags' --exclude='*.files' --exclude='*.out''
 # alias grep2='grep --color -i -nH'
-alias h='history'
+alias h='source ~/bin/_history_special.sh'
 alias make='colormake'
+alias tmux="TERM=screen-256color-bce tmux"
+alias vi='vim --noplugin'
+
+
 
 # my alias
 BINPATH=/home/pin/Desktop/git-hub/Bash_Shell/bin
@@ -46,6 +50,8 @@ alias cl='ls -l $NOTEBOOK'
 alias c='sh $BINPATH/_cat.sh'
 alias tmux="TERM=screen-256color-bce tmux"
 alias mdv='~/bin/terminal_markdown_viewer/mdv.py'
+alias DB='source _cscope DB'
+alias fdls='find . -type d -name'
 #alias ccat='~/swork/bin/source-highlight/src-hilite-lesspipe.sh'
 
 source /usr/share/doc/cdargs/examples/cdargs-bash.sh

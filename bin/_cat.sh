@@ -1,13 +1,20 @@
 #!bin/bash
+notebook=/home/pin/Desktop/git-hub/Bash_Shell/notebook
 
-NOTEBOOK=/home/pin/Desktop/git-hub/Bash_Shell/notebook
-if [ ! -z "$1" ] ;then
-  cat $NOTEBOOK/$1
-  #/usr/share/vim/vim73/macros/less.sh ~/notebook/$1
-else
+if [ ! -z "$2" ];then
+#vim ~/notebook/$1
+    echo "notebook rw mode"
+    vim --noplugin ~/$notebook/$1
     exit
 fi
 
-if [ ! -z "$2" ];then
-vim $NOTEBOOK/$1
+if [ ! -z "$1" ] ;then
+    # cat ~/notebook/$1
+    # cat ~/notebook/$1 | less
+    echo "notebook r mode"
+    /usr/share/vim/vim73/macros/less.sh ~/$notebook/$1
+    exit
 fi
+
+
+
