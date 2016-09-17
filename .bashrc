@@ -21,7 +21,6 @@ NEW_LINE="\n\[$(tput sgr0)\]"
 
 PS1="$NEW_LINE $BLOD_BLUE\w$YELLOW\$(parse_git_branch)$NEW_LINE$BLOD_GREEN\u@\h$NO_COLOR\$ "
 
-PATH=$PATH:/home/pin/Desktop/git-hub/Bash_Shell/bin
 
 alias ccat='pygmentize -O style=monokai -f console256 -g'
 alias ls='ls --color=auto '
@@ -44,6 +43,7 @@ alias vi='vim --noplugin'
 # my alias
 BINPATH=~/bin
 NOTEBOOK=~/notebook
+PATH=$PATH:$BINPATH
 alias g='sh $BINPATH/_grep.sh'
 alias h='source $BINPATH/_history_special.sh'
 alias cl='ls -l $NOTEBOOK'
